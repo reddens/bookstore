@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\BooksController::class, 'index']);
 Route::get('/books', [App\Http\Controllers\BooksController::class, 'show']);
 Route::get('/cart', [App\Http\Controllers\BooksController::class, 'cart'])->middleware('auth');
-Route::post('/books', [App\Http\Controllers\BooksController::class, 'store']);
+Route::post('/books', [App\Http\Controllers\BooksController::class, 'store'])->middleware('auth');
 Route::get('/checkout', [App\Http\Controllers\BooksController::class, 'checkout']);
 Auth::routes();
 
